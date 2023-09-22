@@ -2,15 +2,15 @@ var router = require("express").Router();
 const nodemailer = require("nodemailer");
 
 router.post("/sendEmail",async function(req,res){
-    const { emails,subject,html } = req.body;
+    const { emails,subject,html,text } = req.body;
 
   // Configure the email transporter
   const transporter = nodemailer.createTransport({
     // Provide your email service credentials here
     service: 'Gmail',
     auth: {
-        user: "sailokesh7875@gmail.com",
-        pass: "okhrnpteysyhixux",
+        user: "info@americancomposers.org",
+        pass: "uywgfmsqofodmvgt",
     },
   });
 
@@ -19,7 +19,7 @@ router.post("/sendEmail",async function(req,res){
     const emailPromises = emails.map(async (email) => {
       // Define the email options
       const mailOptions = {
-        from: 'sailokesh7875@gmail.com',
+        from: 'info@americancomposers.org',
         to: email,
         subject,
         html,
